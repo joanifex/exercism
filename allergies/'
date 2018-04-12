@@ -1,0 +1,23 @@
+const allergens = [
+  'eggs',
+  'peanuts',
+  'shellfish',
+  'strawberries',
+  'tomatoes',
+  'chocolate',
+  'pollen',
+  'cats',
+];
+
+function Allergens() {}
+Allergens.prototype.list = (n = 0) => {
+  return (n)
+    .toString(2)
+    .split('')
+    .reverse()
+    .reduce((list, bit, index) => {
+      return [...list, bit && allergens[index]];
+    }, []);
+};
+
+module.exports = Allergens;
